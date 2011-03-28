@@ -37,9 +37,9 @@
         };
       });
     }
-    addTriggerToMethods('dataAdded',   ['push', 'unshift']);
-    addTriggerToMethods('dataRemoved', ['pop', 'shift']);
-    addTriggerToMethods('dataChanged', ['sort', 'splice', 'reverse']);
+    addTriggerToMethods('addData',   ['push', 'unshift']);
+    addTriggerToMethods('removeData', ['pop', 'shift']);
+    addTriggerToMethods('changeData', ['sort', 'splice', 'reverse']);
 
     return Stack;
   })();

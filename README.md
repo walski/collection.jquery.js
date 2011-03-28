@@ -7,23 +7,23 @@
  
 ## Events
 
-  * dataAdded
-  * dataRemoved
-  * dataChanged
+  * addData
+  * removeData
+  * changeData
   
-### dataAdded
+### addData
 Is called when either push() or unshift() is called on a collection, therefore when a element gets added to the collection.
 
 #### Arguments
-*dataAdded* event handlers are getting one additional argument passed which is the element (or list of elements) that gets added to the collection.
+*addData* event handlers are getting one additional argument passed which is the element (or list of elements) that gets added to the collection.
 
-### dataRemoved
+### removeData
 Is called when either pop() or shift() is called on a collection, therefore when a element gets removed from the collection.
 
 #### Arguments
-*dataAdded* event handlers are getting one additional argument passed which is the element (or list of elements) that gets removed from the collection.
+*addData* event handlers are getting one additional argument passed which is the element (or list of elements) that gets removed from the collection.
 
-### dataChanged
+### changeData
 Is called when either sort(), slice() or revert() is called on a collection, therefore when the collection changes it's order or elements are added and removed at once.
 
 #### Arguments
@@ -51,7 +51,7 @@ Simple example:
   ...
   &lt;script style="text/javascript">
     var fruits = $.collection();
-    fruits.bind('dataAdded', function(event, fruit) {
+    fruits.bind('addData', function(event, fruit) {
       alert("A " + fruit + " has been added.");
     });
     fruits.push('apple');
