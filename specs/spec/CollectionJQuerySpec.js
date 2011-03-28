@@ -32,6 +32,20 @@ describe("collection.jquery.js", function() {
     expect(collection).toEqualArray([456, 123]);
   });
   
+  it('allows to remove items from it easily', function() {
+    var a = [1, 2, 3];
+    var b = ['m00', 34, {}];
+    var c = [1, 2, 3];
+    
+    collection.push(a);
+    collection.push(b);
+    collection.push(c);
+    
+    collection.remove(b);
+    expect(collection.length).toBe(2);
+    expect(collection).toEqualArray([a,c]);
+  });
+  
   describe("with data", function() {
     beforeEach(function() {
       collection.push(123);

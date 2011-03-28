@@ -25,6 +25,13 @@
       this.jQuery.bind(event, callback);
     };
     
+    Stack.prototype.remove = function(obj) {
+      var index = this.indexOf(obj);
+      if (index > -1) {
+        this.splice(index, 1);
+      }
+    };
+    
     Stack.prototype.constructor = Stack;
 
     function addTriggerToMethods(eventName, methods) {
