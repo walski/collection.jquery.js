@@ -7,6 +7,16 @@ describe("collection.jquery.js", function() {
     eventCallback = jasmine.createSpy();
   });
   
+  it("can be created with elements", function() {
+    collection = $.collection(1, 2, 3);
+    expect(collection.length).toBe(3);
+    expect(collection).toEqualArray([1, 2, 3]);
+    
+    collection = $.collection([4, 5]);
+    expect(collection.length).toBe(1);
+    expect(collection).toEqualArray([[4, 5]]);
+  });
+  
   it("fires event on add and keeps normal behaviour", function() {
     collection.bind('addData', eventCallback);
     collection.push(123);

@@ -45,6 +45,10 @@
   })();
   
   $.collection = function() {
-    return new Stack();
+    var collection = new Stack();
+    $.each(arguments, function() {
+      collection.push(this);
+    });
+    return collection;
   };
 })(jQuery);
